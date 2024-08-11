@@ -226,7 +226,7 @@
                 httpddosParams.replace(/[\[\]']+/g, '').split(',').forEach(item => {
                     const [code, count] = item.split('-');
                     const percentageValue = parseFloat(count) / params.total * 100;
-                    if (percentageValue >= 0.2) { 
+                    if (percentageValue >= 0.5) { 
                         const description = getHttpDdosDescription(code);
                         httpddosMap[description] = (httpddosMap[description] || 0) + percentageValue;
                     }
@@ -240,7 +240,7 @@
                 otherParams.replace(/[\[\]']+/g, '').split(',').forEach(item => {
                     const [source, count] = item.split('-');
                     const percentageValue = parseFloat(count) / params.total * 100;
-                    if (percentageValue >= 0.2) { 
+                    if (percentageValue >= 0.5) { 
                         const sourceName = translateSource(source);
                         otherMap[sourceName] = (otherMap[sourceName] || 0) + percentageValue;
                     }
